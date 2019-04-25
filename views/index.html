@@ -1,28 +1,3 @@
-<h1>Eat-Da-Burger!</h1>
-
-<h2>Burgers that are not eaten!</h2>
-
-<ul>
-  {{#each burgers}}
-  {{!-- if not devoured --}}
-    {{#unless devoured}} 
-      {{> burgers/burger-block  devoured=false}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>burgers that are eaten</h2>
-
-<ul>
-  {{#each burgers}}
-
-    {{#if devoured}}
-      {{> burger/burger-block devoured=true}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
 
   <body>
     <div class="container">
@@ -93,4 +68,6 @@
       </div>
     </div>
     <!-- Optional JavaScript -->
-</body>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   
+  </body>

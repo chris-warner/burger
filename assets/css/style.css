@@ -1,0 +1,39 @@
+.container {
+    border: 2px cadetblue inset;
+    height: auto;
+    align-content: center;
+    height: 100%;
+}
+
+h1 {
+    align-content: center;
+}
+
+.textbox {
+    width: 100%;
+}
+
+.submitBtn {
+    width: 100px;
+    border-color: black;
+    border: steelblue;
+    border-style: solid;
+    align-content: center;
+}
+
+img {
+    width: 200px;
+    margin: auto;
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+p,
+body {
+    align-content: center;
+}
+h1,
+p {
+    text-align: center;
+}
