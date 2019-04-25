@@ -1,96 +1,52 @@
-<h1>Eat-Da-Burger!</h1>
+<div class="container">
+  <img src="assets/img/burger.png">
 
-<h2>Burgers that are not eaten!</h2>
+  <br>
+  <h1>Eat Da Burger</h1>
 
-<ul>
-  {{#each burgers}}
-  {{!-- if not devoured --}}
-    {{#unless devoured}} 
-      {{> burgers/burger-block  devoured=false}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>burgers that are eaten</h2>
-
-<ul>
-  {{#each burgers}}
-
-    {{#if devoured}}
-      {{> burger/burger-block devoured=true}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          
-        </div>
-        <div class="col-md-4">
-       <img src="../assets/images/burger.png">
-          
-        </div>
-        <div class="col-xs-12 col-md-4">
-          
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-        
-
-         <div id="burgersReady">
-                <h2>Burgers Ready.</h2> 
-         </div>
-
-         <div id="burgersDevoured">
-                <h2 >Burgers Devoured.</h2> 
-         </div>
-
-        
-        </div>
-        <div class="col-xs-12 col-md-4">
-          <h1>Eat da Burger</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4">
-          
-        </div>
-        <div class="col-lg-4">
-          <p>Enter the burger you want to eat and click submit</p>
-        </div>
-        <div class="col-xs-12 col-lg-4">
-          
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          
-        </div>
-        <div class="col-xs-12 col-md-4">
-            <input type="text" class="textbox" id="burgerText">
-           <center><button class="submitBtn" >submit</button></center> 
-          </form>
-        </div>
-        <div class="col-md-4">
-            
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-4">
-          
-        </div>
-        <div class="col-xs-4 col-md-4">
-          
-        </div>
-        <div class="col-xs-4">
-          
-        </div>
-      </div>
+  <div class="flex-container">
+    <div>
+      <ul>
+        {{#each burger}}
+          {{#unless devoured}}
+            <li>
+              {{burger_name}}
+            </li>
+          {{/unless}}
+        {{/each}}
+      </ul>
     </div>
-    <!-- Optional JavaScript -->
-</body>
+    <div>
+      <ul>
+        {{#each burger}}
+        {{#unless devoured}}
+        <li>
+          <button class="eat-burger" data-id="{{this.id}}">Devour It!</button>
+        </li>`
+        {{/unless}}
+        {{/each}}
+      </ul>      
+    </div>
+    <div>
+      <ul>
+        {{#each burger}}
+          {{#if devoured}}
+          <li>
+            {{burger_name}}
+          </li>        
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+  <form class="create-form">
+
+    <div class="form-group">
+      <input type="text" id="burger" name="burger_name">
+    </div>
+
+    <button type="submit" class="add-burger">Submit</button>
+    <p>Enter a burger you want to eat. Click the "Submit" button to Save</p>
+  </form>
+</div>

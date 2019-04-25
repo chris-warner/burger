@@ -1,13 +1,16 @@
+// importing express & burger.js
 var express = require("express");
 var burger = require("../models/burger.js");
+
+// setting up the router
 var router = express.Router();
 
 router.get("/", function(req, res) {
     burger.all(function(data){
-        var burgerObj = {
+        var hbsObject = {
             burger: data
-        };
-        res.render("index", burgerObj);
+        }
+        res.render("index", hbsObject);
     });
 });
 
@@ -34,4 +37,5 @@ router.put("/api/burgers/:id", function(req, res){
     });
 });
 
+// Export routes for server.js to use.
 module.exports = router;
